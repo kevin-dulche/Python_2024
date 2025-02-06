@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor de Código Python</title>
+    
+    <!-- CodeMirror CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/dracula.min.css">
+
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        .editor-container { width: 80%; margin: auto; text-align: left; }
+        #editor { border: 1px solid #ccc; height: 200px; }
+        pre { background: #282a36; color: #f8f8f2; padding: 10px; border-radius: 5px; text-align: left; width: 80%; margin: auto; }
+    </style>
+</head>
+<body>
+    <h2>Editor de Código Python en la Web</h2>
+    
+    <div class="editor-container">
+        <textarea id="editor">print("Hola, mundo!")</textarea>
+    </div>
+    
+    <br>
+
+
+    <!-- CodeMirror JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/python/python.min.js"></script>
+    
+
+    <script>
+        // Inicializar CodeMirror
+        let editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
+            mode: "python",
+            theme: "dracula",
+            lineNumbers: true,
+            indentUnit: 4,
+            matchBrackets: true
+        });
+    </script>
+</body>
+</html>
